@@ -5,6 +5,12 @@ body {
     background: #464646;
 }
 
+h1, h2, h3, h4 {
+    font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, Helvetica Neue, Arial, sans-serif;
+    font-weight: 300;
+    line-height: 1.1;
+}
+
 .if-m--main {
     background: #f7931e;
     color: #fff;
@@ -85,13 +91,6 @@ body {
             height: 6rem;
         }
 
-        .if-m--main .if-m--jumbo .if-m--titles h1,
-        .if-m--main .if-m--jumbo .if-m--titles h3 {
-            font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, Helvetica Neue, Arial, sans-serif;
-            font-weight: 300;
-            line-height: 1.1;
-        }
-
         .if-m--main .if-m--jumbo .blurb {
             margin: 1rem 0 0;
         }
@@ -127,6 +126,32 @@ body {
                     -o-transition: color 300ms ease;
                     transition: color 300ms ease;
                 }
+
+    .if-m--main .if-m--content {
+        background: #fff;
+        color: #1E1E1E;
+
+        margin: 0 0 2rem;
+        padding: 1rem;
+
+        -webkit-box-shadow: 0 .6rem .4rem -.4rem rgba(0,0,0,.2);
+        box-shadow: 0 .6rem .4rem -.4rem rgba(0,0,0,.2);
+    }
+
+        .if-m--main .if-m--content .if-m--crumbs {
+            padding-bottom: 0;
+        }
+
+            .if-m--main .if-m--content .if-m--crumbs > nav > .breadcrumbs {
+                margin: 0;
+            }
+
+        .if-m--main .if-m--content .if-m--big-input {
+            font-size: 2rem;
+            text-align: center;
+
+            height: 4rem;
+        }
 
 .if-m--footer {
     background: #464646;
@@ -175,6 +200,10 @@ body {
             text-align: center;
             display: inherit;
         }
+
+    .if-m--main .if-m--content {
+        margin: 0;
+    }
     
     .if-m--footer {
         padding: .8rem;

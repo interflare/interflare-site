@@ -1,0 +1,74 @@
+body {
+    font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, Helvetica Neue, Arial, sans-serif;
+}
+
+.if-m--main {
+    background: #f7931e;
+}
+
+    .if-m--main .if-m--header,
+    .if-m--main .if-m--header a {
+        color: #fff;
+    }
+
+    .if-m--main .if-m--header {
+        padding: 2rem 1rem;
+    }
+
+        .if-m--main .if-m--header .if-m--banner {
+            height: 2rem;
+        }
+
+        .if-m--main .if-m--header .menu > li:not(:first-child) {
+            margin: 0 0 0 .8rem;
+        }
+
+        .if-m--main .if-m--header .menu > li > a {
+            padding: .7rem;
+
+            color: #fff;
+
+            font-family: proxima-nova, sans-serif;
+            font-style: normal;
+            font-weight: 500;
+            font-size: .8rem;
+            letter-spacing: .12rem;
+            text-transform: uppercase;
+        }
+
+        .if-m--main .if-m--header .menu > .cta {
+            border: .14rem solid #fff;
+            border-radius: 1.2rem;
+        }
+
+            .if-m--main .if-m--header .menu > .cta > a {
+                padding: .6rem;
+            }
+
+            .if-m--main .if-m--header .menu > .cta:hover {
+                color: #000;
+                background: #fff;
+
+                -webkit-transition: background 300ms ease;
+                -moz-transition: background 300ms ease;
+                -ms-transition: background 300ms ease;
+                -o-transition: background 300ms ease;
+                transition: background 300ms ease;
+            }
+
+                .if-m--main .if-m--header .menu > .cta:hover > a {
+                    color: #f7931e;
+                    
+                    -webkit-transition: color 300ms ease;
+                    -moz-transition: color 300ms ease;
+                    -ms-transition: color 300ms ease;
+                    -o-transition: color 300ms ease;
+                    transition: color 300ms ease;
+                }
+
+.if-m--cta {
+    background: #464646;
+    color: #f0f0f0;
+
+    padding: 2rem;
+}

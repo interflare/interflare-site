@@ -51,6 +51,8 @@
                             </div>
                             <div class="small-6 cell">
                                 <ul class="menu" style="-webkit-box-pack: end; -webkit-justify-content: flex-end; -ms-flex-pack: end; justify-content: flex-end;">
+                                    <li><a href="https://community.interflare.net/?utm_source=iflr-static">Community</a></li>
+                                    <li><a id="if-a--livemap-noframe">Remove frame</a></li>
                                     <li class="cta"><a href="https://interflare.net/join.html">Join us</a></li>
                                 </ul>
                             </div>
@@ -69,7 +71,8 @@
         <script>
             $(document).foundation();
 
-            $("#if-a--livemap-box").attr("src", "https://map.interflare.net/" + window.location.search)
+            $('#if-a--livemap-box').attr('src', `https://map.interflare.net/${window.location.search}`)
+            $('#if-a--livemap-noframe').attr('href', `https://map.interflare.net/${window.location.search}`)
         </script>
     </body>
 </html>

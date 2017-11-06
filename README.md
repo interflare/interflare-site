@@ -1,2 +1,2 @@
-# interflare.github.io
+# interflare.net
 Homepage for InterFlare

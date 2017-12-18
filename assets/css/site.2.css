@@ -9,10 +9,15 @@ h1, h2, h3, h4 {
     line-height: 1.1;
 }
 
-a {
+a, .breadcrumbs a {
     color: #f7931e;
-} a:hover {
+} a:hover, .breadcrumbs a:hover {
     color: #d8a974;
+}
+
+.breadcrumbs li {
+    text-transform: none;
+    font-size: 13px;
 }
 
 .container {
@@ -251,7 +256,11 @@ section.dark {
 }
 
 section h2 {
-    margin: 0 0 35px;
+    margin: 0 0 50px;
+}
+
+section h2.lesser {
+    margin: 0 0 25px;
 }
 
 section .cell.padded {

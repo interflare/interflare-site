@@ -1,8 +1,6 @@
 body {
     font-family: "source-sans-pro", Calibri, Candara, Arial, sans-serif;
-
     min-height: 100%;
-    background: #464646;
 }
 
 h1, h2, h3, h4 {
@@ -24,7 +22,6 @@ h1, h2, h3, h4 {
 
 nav {
     background: #222;
-
     max-height: 50px;
 }
 
@@ -105,6 +102,11 @@ nav .cta {
 }
 
 
+#side-menu {
+    background: #222;
+    box-shadow: none;
+}
+
 mobile-nav {
     display: block;
     padding: 25px;
@@ -144,6 +146,7 @@ mobile-nav .cta {
     margin: 25px auto 0;
 }
 
+
 jumbo {
     display: block;
     min-height: 360px;
@@ -151,6 +154,8 @@ jumbo {
     color: #fff;
 
     text-shadow: 0px 0px .2rem rgba(85, 85, 85, .8);
+    -webkit-box-shadow: 0 0.6rem 0.4rem -0.4rem rgba(0,0,0,.2);
+    box-shadow: 0 0.6rem 0.4rem -0.4rem rgba(0,0,0,.2);
 }
 
 jumbo .overlay {
@@ -186,6 +191,36 @@ jumbo .cta a {
     font-size: 25px;
     text-shadow: none;
 }
+
+
+footer {
+    background: #333;
+
+    min-height: 80px;
+
+    color: #aaa;
+    text-align: right;
+}
+
+footer .brand {
+    display: inline-block;
+
+    height: 44px;
+    margin: 27px 15px 0 0;
+}
+
+footer .brand p {
+    margin: 0;
+
+    font-size: 14px;
+    line-height: 22px;
+}
+
+footer .logo {
+    height: 80px;
+    float: right;
+}
+
 
 .cta {
     border: 2px solid #fff;
@@ -252,12 +287,6 @@ a.icon-container {
     background: none;
 }
 
-#side-menu {
-    background: #222;
-
-    box-shadow: none;
-}
-
 /* SMALL SCREENS */
 @media screen and (max-width: 39.9375em) {
     nav .logo h1 { margin-left: 15px; }
@@ -277,5 +306,17 @@ a.icon-container {
     jumbo .cta {
         float: none;
         margin: 20px auto 0;
+    }
+
+    footer {
+        text-align: center;
+        padding: 30px 0 20px;
+    }
+    footer .brand { margin: 0; }
+    footer .logo {
+        float: none;
+        display: block;
+        height: 50px;
+        margin: 0 auto 15px;
     }
 }

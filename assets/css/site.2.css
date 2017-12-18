@@ -193,6 +193,19 @@ jumbo .cta a {
 }
 
 
+section {
+    padding: 40px 0;
+}
+
+section h2 {
+    margin: 0 0 35px;
+}
+
+section .cell.padded {
+    padding: 0 25px 25px;
+}
+
+
 footer {
     background: #333;
 

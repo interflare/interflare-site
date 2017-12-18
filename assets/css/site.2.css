@@ -216,6 +216,13 @@ section .cell.padded {
     padding: 0 25px 25px;
 }
 
+section#reasons svg {
+    display: block;
+
+    height: 100px;
+    margin: 0 auto 25px;
+}
+
 section#join input {
     font-size: 2rem;
     text-align: center;
@@ -343,6 +350,12 @@ a.icon-container {
         float: none;
         margin: 20px auto 0;
     }
+
+    section h2 { font-size: 36px; }
+    section h4 { font-size: 24px; }
+
+    section#reasons svg { height: 80px; }
+    section#reasons h4 { text-align: center; }
 
     footer {
         text-align: center;

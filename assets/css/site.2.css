@@ -29,6 +29,7 @@ a {
 nav {
     background: #222;
     max-height: 50px;
+    margin-bottom: 4px;
 }
 
 nav ul,
@@ -156,12 +157,12 @@ mobile-nav .cta {
 jumbo {
     display: block;
     min-height: 360px;
+    margin-top: -4px;
 
     color: #fff;
 
-    text-shadow: 0px 0px .2rem rgba(85, 85, 85, .8);
-    -webkit-box-shadow: 0 0.6rem 0.4rem -0.4rem rgba(0,0,0,.2);
-    box-shadow: 0 0.6rem 0.4rem -0.4rem rgba(0,0,0,.2);
+    text-shadow: 0px 0px 5px rgba(85, 85, 85, .8);
+    box-shadow: 0 5px 10px -5px rgba(0,0,0,.5);
 }
 
 jumbo .overlay {
@@ -196,6 +197,47 @@ jumbo .cta a {
 
     font-size: 25px;
     text-shadow: none;
+}
+
+
+page {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    margin-top: -4px;
+    padding: 35px 0;
+
+    background: #333;
+    color: #fff;
+}
+
+page h1 {
+    text-align: center;
+    margin: 0 0 25px;
+}
+
+page > section:first-of-type {
+    padding-top: 70px;
+}
+
+page > section .container {
+    padding: 0 80px;
+}
+
+
+article {
+    background: #fff;
+    color: #000;
+
+    padding: 25px 0 !important;
+
+    box-shadow: 0 10px 30px -5px rgba(0,0,0,.5);
+}
+
+article .container {
+    padding: 0 30px;
 }
 
 
@@ -342,6 +384,12 @@ a.icon-container {
     background: none;
 }
 
+h4.series {  margin-top: 25px; }
+h4.under {
+    padding-bottom: 10px;
+    border-bottom: #e4e4e4 solid 1px;
+}
+
 #livemap {
     border: none;
     
@@ -354,6 +402,9 @@ a.icon-container {
 
 /* SMALL SCREENS */
 @media screen and (max-width: 39.9375em) {
+    h2 { font-size: 36px; }
+    h4 { font-size: 24px; }
+
     nav .logo h1 { margin-left: 15px; }
 
     jumbo {
@@ -373,8 +424,7 @@ a.icon-container {
         margin: 20px auto 0;
     }
 
-    section h2 { font-size: 36px; }
-    section h4 { font-size: 24px; }
+    page section .container { padding: 0 15px; }
 
     section#reasons svg { height: 80px; }
     section#reasons h4 { text-align: center; }

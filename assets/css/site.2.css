@@ -9,6 +9,12 @@ h1, h2, h3, h4 {
     line-height: 1.1;
 }
 
+a {
+    color: #f7931e;
+} a:hover {
+    color: #d8a974;
+}
+
 .container {
     margin-right: auto;
     margin-left: auto;
@@ -197,12 +203,29 @@ section {
     padding: 40px 0;
 }
 
+section.dark {
+    background: #464646;
+    color: #fafafa;
+}
+
 section h2 {
     margin: 0 0 35px;
 }
 
 section .cell.padded {
     padding: 0 25px 25px;
+}
+
+section#join input {
+    font-size: 2rem;
+    text-align: center;
+
+    height: 4rem;
+}
+
+section#join p {
+    margin: 0;
+    text-align: right;
 }
 
 

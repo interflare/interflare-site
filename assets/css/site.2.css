@@ -336,6 +336,16 @@ a.icon-container {
     background: none;
 }
 
+#livemap {
+    border: none;
+    
+    width: 100vw;
+    height: calc(100vh - 50px);
+    margin-top: -7px;
+
+    background: #464646;
+}
+
 /* SMALL SCREENS */
 @media screen and (max-width: 39.9375em) {
     nav .logo h1 { margin-left: 15px; }

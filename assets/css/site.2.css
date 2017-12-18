@@ -245,6 +245,12 @@ footer {
     text-align: right;
 }
 
+footer .do {
+    float: left;
+    width: 120px;
+    margin: 30px 0 18px;
+}
+
 footer .brand {
     display: inline-block;
 

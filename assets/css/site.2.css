@@ -1,5 +1,5 @@
 body {
-    font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, Helvetica Neue, Arial, sans-serif;
+    font-family: "source-sans-pro", Calibri, Candara, Arial, sans-serif;
 
     min-height: 100%;
     background: #464646;
@@ -26,7 +26,6 @@ nav {
     background: #222;
 
     max-height: 50px;
-    margin-bottom: 21px;
 }
 
 nav ul,
@@ -79,6 +78,7 @@ nav .logo {
 
 nav .logo a {
     padding: 0;
+    outline: none;
 }
 
 nav .logo svg {
@@ -139,13 +139,48 @@ mobile-nav ul a {
     font-size: 15px;
 }
 
-mobile-nav ul a.active {
-
-}
-
 mobile-nav .cta {
     width: fit-content;
     margin: 25px auto 0;
+}
+
+jumbo {
+    display: block;
+    min-height: 360px;
+
+    color: #fff;
+
+    text-shadow: 0px 0px .2rem rgba(85, 85, 85, .8);
+}
+
+jumbo .overlay {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAFElEQVQYV2NkYGB4xsDAIMXIAAUADcUBA4gpF34AAAAASUVORK5CYII=');
+
+    width: 100%;
+    min-height: 360px;
+}
+
+jumbo .container > div {
+    width: 100%;
+    min-height: 356px;
+}
+
+jumbo .cta {
+    width: fit-content;
+    margin: 0;
+
+    float: right;
+
+    white-space: nowrap;
+}
+
+jumbo .cta a {
+    padding: 15px;
+
+    color: #fff;
+
+    font-size: 25px;
+    text-shadow: none;
 }
 
 .cta {
@@ -222,4 +257,21 @@ a.icon-container {
 /* SMALL SCREENS */
 @media screen and (max-width: 39.9375em) {
     nav .logo h1 { margin-left: 15px; }
+
+    jumbo {
+        min-height: 250px;
+        text-align: center;
+        background-size: 200% !important;
+    }
+    jumbo .overlay { min-height: 250px; }
+    jumbo .container > div {
+        min-height: 235px;
+        padding-left: 10px;
+    }
+    jumbo h1 { font-size: 40px; }
+    jumbo h3 { font-size: 21px; }
+    jumbo .cta {
+        float: none;
+        margin: 20px auto 0;
+    }
 }

@@ -393,6 +393,20 @@ a.icon-container {
     background: none;
 }
 
+.bignum, .numexp {
+    text-align: center;
+    margin: 0;
+}
+
+.bignum {
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.numexp {
+    margin-bottom: 18px;
+}
+
 h4.series {  margin-top: 25px; }
 h4.under {
     padding-bottom: 10px;
@@ -433,6 +447,7 @@ h4.under {
         margin: 20px auto 0;
     }
 
+    page { padding: 0 0 35px; }
     page section .container { padding: 0 15px; }
 
     section#reasons svg { height: 80px; }

@@ -42,7 +42,7 @@ class BlockStats {
             $.getJSON(uri)
                 .done((payload) => {
                     let xhrTSDiff = new Date() - xhrStart;
-                    console.info('Player('+ this.pid +').getBlockData('+ wid +'): completed xhr in '+ xhrTSDiff +'ms');
+                    console.info('Player('+ pid +').getBlockData('+ wid +'): completed xhr in '+ xhrTSDiff +'ms');
     
                     this.localCachePayload(payload, next);
                 })

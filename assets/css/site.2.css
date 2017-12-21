@@ -393,6 +393,20 @@ a.icon-container {
     background: none;
 }
 
+.bignum, .numexp {
+    text-align: center;
+    margin: 0;
+}
+
+.bignum {
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.numexp {
+    margin-bottom: 18px;
+}
+
 h4.series {  margin-top: 25px; }
 h4.under {
     padding-bottom: 10px;

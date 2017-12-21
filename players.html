@@ -98,9 +98,32 @@
                         </bread-nav>
 
                         <div class="container">
-                            <h2 component="stats/title">Players</h2>
+                            <h2 component="stats/title">Player statistics</h2>
                             <div component="stats/main">
-                                
+                                <div class="grid-x">
+                                    <div class="large-3 medium-4 cell" component="stats/player/list">
+                                        <div class="grid-x active" component="stats/player/list/item">
+                                            <div class="shrink cell">
+                                                <img src="https://crafatar.com/avatars/41910d0e-d3d4-4eca-bf8f-30510281f269?size=50">
+                                            </div>
+                                            <div class="auto cell">
+                                                <h4>abcedea</h4>
+                                            </div>
+                                        </div>
+
+                                        <div class="grid-x" component="stats/player/list/item">
+                                            <div class="shrink cell">
+                                                <img src="https://crafatar.com/avatars/41910d0e-d3d4-4eca-bf8f-30510281f269?size=50">
+                                            </div>
+                                            <div class="auto cell">
+                                                <h4>abcedea</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="large-9 medium-8 cell" component="stats/player/info">
+                                        main stuff
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </article>
@@ -132,6 +155,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/what-input/5.0.1/what-input.min.js" integrity="sha256-H/pzN880hDBJqAzZip+BOpvX0ofDzjiB1HXUf/0tbcE=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js" integrity="sha256-mRYlCu5EG+ouD07WxLF8v4ZAZYCA6WrmdIXyn1Bv9Vk=" crossorigin="anonymous"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/block-stats.js"></script>
         <script src="assets/js/player-stats.js"></script>
         <script>
             $(document).foundation();

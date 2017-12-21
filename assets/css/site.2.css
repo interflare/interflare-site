@@ -328,6 +328,45 @@ footer .logo {
 }
 
 
+[component="stats/player/list/item"] {
+    background: #bfbfbf;
+    padding: 5px;
+} [component="stats/player/list/item"]:nth-child(even) {
+    background: #a0a0a0;
+}
+
+[component="stats/player/list/item"]:hover {
+    background: #f7931e;
+    cursor: pointer;
+}
+
+[component="stats/player/list/item"].active {
+    background: #fff;
+    cursor: default;
+
+    box-shadow: -15px 0px 20px 0px rgba(0,0,0,.2);
+    position: relative;
+}
+
+[component="stats/player/list/item"] img {
+    width: 50px;
+    height: 50px;
+}
+
+[component="stats/player/list/item"] h4 {
+    height: 25px;
+
+    font-size: 20px;
+    line-height: 25px;
+    
+    margin: 11px 0 14px 10px;
+}
+
+[component="stats/player/info"] {
+    padding: 10px 20px;
+}
+
+
 .cta {
     border: 2px solid #fff;
     border-radius: 10px;

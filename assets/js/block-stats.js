@@ -56,7 +56,7 @@ class BlockStats {
                 pid: pid,
                 wid: wid,
                 data: JSON.parse(window.localStorage.getItem(
-                    Util.buildLStorageKey('player', 'blockData', ['p', this.pid], ['w', wid])))
+                    Util.buildLStorageKey('player', 'blockData', ['p', pid], ['w', wid])))
             };
 
             return next(payload);

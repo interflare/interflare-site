@@ -101,8 +101,8 @@
                             <h2 component="stats/title">Player statistics</h2>
                             <div component="stats/main">
                                 <div class="grid-x">
-                                    <div class="large-3 medium-4 cell" component="stats/player/list">
-                                        <div class="grid-x active" component="stats/player/list/item">
+                                    <div class="large-3 medium-4 cell active-panel" component="stats/player/list">
+                                        <div class="grid-x active" component="stats/player/list/item" data-pid="3">
                                             <div class="shrink cell">
                                                 <img src="https://crafatar.com/avatars/41910d0e-d3d4-4eca-bf8f-30510281f269?size=50">
                                             </div>
@@ -111,7 +111,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="grid-x" component="stats/player/list/item">
+                                        <div class="grid-x" component="stats/player/list/item" data-pid="3">
                                             <div class="shrink cell">
                                                 <img src="https://crafatar.com/avatars/41910d0e-d3d4-4eca-bf8f-30510281f269?size=50">
                                             </div>
@@ -120,7 +120,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="grid-x" component="stats/player/list/item">
+                                        <div class="grid-x" component="stats/player/list/item" data-pid="3">
                                             <div class="shrink cell">
                                                 <img src="https://crafatar.com/avatars/41910d0e-d3d4-4eca-bf8f-30510281f269?size=50">
                                             </div>
@@ -130,24 +130,25 @@
                                         </div>
                                     </div>
                                     <div class="large-9 medium-8 cell" component="stats/player/info">
+                                        <div component="stats/player/info/ctl/close" class="show-for-small-only">&times;</div>
                                         <div component="stats/player/info/worlds">
                                             <div component="stats/player/info/worlds/world" class="world-all">
                                                 <div class="grid-x grid-margin-x">
-                                                    <div class="auto cell">
+                                                    <div class="medium-3 cell">
+                                                        <h3>Totals</h3>
+                                                        <p class="accuracy show-for-large">@ 10:23 2017-12-22</p>
+                                                    </div>
+                                                    <div class="auto cell show-for-large">
                                                         <p class="bignum" component="stats/player/info/worlds/world/total">152,036</p>
                                                         <p class="numexp">Total block diff</p>
                                                     </div>
-                                                    <div class="auto cell">
+                                                    <div class="medium-auto small-6 cell">
                                                         <p class="bignum" component="stats/player/info/worlds/world/placed">988,722</p>
                                                         <p class="numexp">Total placed</p>
                                                     </div>
-                                                    <div class="auto cell">
+                                                    <div class="medium-auto small-6 cell">
                                                         <p class="bignum" component="stats/player/info/worlds/world/broken">836,686</p>
                                                         <p class="numexp">Total broken</p>
-                                                    </div>
-                                                    <div class="auto cell">
-                                                        <p class="bignum" component="stats/player/info/worlds/world/rolledback">208,192</p>
-                                                        <p class="numexp">Total rolled back</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -156,18 +157,19 @@
                                                 <div class="grid-x grid-margin-x">
                                                     <div class="medium-3 cell">
                                                         <h3>Lux</h3>
+                                                        <p class="accuracy show-for-large">@ 10:23 2017-12-22</p>
                                                     </div>
-                                                    <div class="auto cell">
+                                                    <div class="medium-auto cell show-for-large">
                                                         <p class="bignum" component="stats/player/info/worlds/world/total">152,036</p>
-                                                        <p class="numexp">Total block diff</p>
+                                                        <p class="numexp">Block diff</p>
                                                     </div>
-                                                    <div class="auto cell">
+                                                    <div class="medium-auto small-6 cell">
                                                         <p class="bignum" component="stats/player/info/worlds/world/placed">988,722</p>
-                                                        <p class="numexp">Total placed</p>
+                                                        <p class="numexp">Placed</p>
                                                     </div>
-                                                    <div class="auto cell">
+                                                    <div class="medium-auto small-6 cell">
                                                         <p class="bignum" component="stats/player/info/worlds/world/broken">836,686</p>
-                                                        <p class="numexp">Total broken</p>
+                                                        <p class="numexp">Broken</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -176,18 +178,19 @@
                                                 <div class="grid-x grid-margin-x">
                                                     <div class="medium-3 cell">
                                                         <h3>Akr</h3>
+                                                        <p class="accuracy show-for-large">@ 10:23 2017-12-22</p>
                                                     </div>
-                                                    <div class="auto cell">
+                                                    <div class="medium-auto cell show-for-large">
                                                         <p class="bignum" component="stats/player/info/worlds/world/total">152,036</p>
-                                                        <p class="numexp">Total block diff</p>
+                                                        <p class="numexp">Block diff</p>
                                                     </div>
-                                                    <div class="auto cell">
+                                                    <div class="medium-auto small-6 cell">
                                                         <p class="bignum" component="stats/player/info/worlds/world/placed">988,722</p>
-                                                        <p class="numexp">Total placed</p>
+                                                        <p class="numexp">Placed</p>
                                                     </div>
-                                                    <div class="auto cell">
+                                                    <div class="medium-auto small-6 cell">
                                                         <p class="bignum" component="stats/player/info/worlds/world/broken">836,686</p>
-                                                        <p class="numexp">Total broken</p>
+                                                        <p class="numexp">Broken</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -241,7 +244,18 @@
         <script src="assets/js/player-stats.js"></script>
         <script>
             $(document).foundation();
+
             let ps = new PlayerStats();
+
+            $('[component="stats/player/list/item"]').click(() => {
+                $('[component="stats/player/info"]').addClass('active-panel');
+                $('[component="stats/player/list"]').removeClass('active-panel');
+            });
+
+            $('[component="stats/player/info/ctl/close"]').click(() => {
+                $('[component="stats/player/info"]').removeClass('active-panel');
+                $('[component="stats/player/list"]').addClass('active-panel');
+            });
         </script>
     </body>
 </html>

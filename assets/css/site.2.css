@@ -395,8 +395,17 @@ footer .logo {
 }
 
 [component="stats/player/info/worlds/world"] h3 {
-    margin: 11px 0 13px 15px;
+    margin: 0 0 0 15px;
     line-height: 31px;
+}
+
+[component="stats/player/info/worlds/world"] .accuracy {
+    font-size: 11px;
+    line-height: 15px;
+
+    margin: 5px 0 0 15px;
+
+    color: #efefef;
 }
 
 [component="stats/player/info/worlds/world"].world-all {
@@ -519,6 +528,26 @@ h4.under {
     background: #464646;
 }
 
+/* MEDIUM SCREENS */
+@media screen and (max-width: 63.9375em) {
+    [component="stats/player/info/worlds/world"],
+    [component="stats/player/info/worlds/search"] {
+        margin: 0
+    }
+
+    [component="stats/player/info/worlds/world"] h3 {
+        margin: 11px 0 13px 15px;
+    }
+
+    [component="stats/player/info/worlds/world"].world-all {
+        padding: 20px 10px;
+    }
+
+    [component="stats/player/info/worlds"] .bignum {
+        font-size: 25px;
+    }
+}
+
 /* SMALL SCREENS */
 @media screen and (max-width: 39.9375em) {
     h2 { font-size: 36px; }
@@ -559,5 +588,55 @@ h4.under {
         display: block;
         height: 50px;
         margin: 0 auto 15px;
+    }
+
+    [component="stats/player/info"],
+    [component="stats/player/info/worlds"] {
+        padding: 0;
+    }
+
+    [component="stats/player/list/item"] {
+        background: #bfbfbf !important;
+    } [component="stats/player/list/item"]:nth-child(even) {
+        background: #a0a0a0 !important;
+    } [component="stats/player/list/item"].active {
+        box-shadow: none;
+    }
+
+    [component="stats/player/info"],
+    [component="stats/player/list"] {
+        display: none;
+    }
+
+    [component="stats/player/info"].active-panel,
+    [component="stats/player/list"].active-panel { display: block; }
+
+    [component="stats/player/info/ctl/close"] {
+        position: absolute;
+        top: 118px; right: 30px;
+        width: 30px; height: 30px;
+
+        padding: 0 6px;
+        
+        color: #fff;
+        background: #f7931e;
+
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 30px;
+    }
+
+    [component="stats/player/info/worlds/world"] > .grid-x {
+        height: auto;
+    }
+
+    [component="stats/player/info/worlds/world"] h3 {
+        margin: 10px 0 15px 12px;
+        line-height: 25px;
+        font-size: 25px;
+    }
+
+    [component="stats/player/info/worlds"] .numexp {
+        margin: 0 0 14px;
     }
 }

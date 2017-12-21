@@ -433,6 +433,7 @@ h4.under {
         margin: 20px auto 0;
     }
 
+    page { padding: 0 0 35px; }
     page section .container { padding: 0 15px; }
 
     section#reasons svg { height: 80px; }

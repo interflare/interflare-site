@@ -363,7 +363,64 @@ footer .logo {
 }
 
 [component="stats/player/info"] {
-    padding: 10px 20px;
+    padding: 0 20px 10px;
+}
+
+
+[component="stats/player/info/worlds"] {
+    padding: 0 15px 15px;
+}
+
+[component="stats/player/info/worlds"] .bignum {
+    font-size: 30px;
+    line-height: 30px;
+}
+
+[component="stats/player/info/worlds"] .numexp {
+    margin: 0;
+}
+
+[component="stats/player/info/worlds/world"] {
+    background: #bfbfbf;
+    color: #fff;
+
+    margin: 0 30px;
+    padding: 10px;
+} [component="stats/player/info/worlds/world"]:nth-child(even) {
+    background: #a0a0a0;
+}
+
+[component="stats/player/info/worlds/world"] > .grid-x {
+    height: 55px;
+}
+
+[component="stats/player/info/worlds/world"] h3 {
+    margin: 11px 0 13px 15px;
+    line-height: 31px;
+}
+
+[component="stats/player/info/worlds/world"].world-all {
+    background: #333;
+
+    position: relative;
+    margin: 0;
+    padding: 20px;
+
+    box-shadow: 0 10px 30px -5px rgba(0,0,0,.4);
+}
+
+[component="stats/player/info/worlds/search"] {
+    margin: 0 30px;
+    padding: 10px;
+}
+
+[component="stats/player/info/worlds/search"] h4 {
+    line-height: 25px;
+    margin: 6px 0 8px;
+}
+
+[component="stats/player/info/worlds/search"] input {
+    margin: 0;
 }
 
 

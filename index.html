@@ -226,7 +226,7 @@
             if(b.numberStep){var c=this.each(function(){this._animateNumberSetter=b.numberStep}),n=a.complete;a.complete=function(){c.each(function(){delete this._animateNumberSetter});n&&n.apply(this,arguments)}}return e.animate.apply(e,f)}})(jQuery);
 
             const bs = new BlockStats();
-            bs.getBlockData(null, null, payload => {
+            bs.getBlockData(0, 0, payload => {
                 let totalCount = payload.data.broken > payload.data.placed
                     ? (payload.data.broken - payload.data.placed)
                     : (payload.data.placed - payload.data.broken);

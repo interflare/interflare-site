@@ -98,36 +98,11 @@
                         </bread-nav>
 
                         <div class="container">
-                            <h2 component="stats/title">Player statistics</h2>
+                            <h2 component="stats/title">Players</h2>
                             <div component="stats/main">
                                 <div class="grid-x">
                                     <div class="large-3 medium-4 cell active-panel" component="stats/player/list">
-                                        <div class="grid-x active" component="stats/player/list/item" data-pid="3">
-                                            <div class="shrink cell">
-                                                <img src="https://crafatar.com/avatars/41910d0e-d3d4-4eca-bf8f-30510281f269?size=50">
-                                            </div>
-                                            <div class="auto cell">
-                                                <h4>abcedea</h4>
-                                            </div>
-                                        </div>
-
-                                        <div class="grid-x" component="stats/player/list/item" data-pid="3">
-                                            <div class="shrink cell">
-                                                <img src="https://crafatar.com/avatars/41910d0e-d3d4-4eca-bf8f-30510281f269?size=50">
-                                            </div>
-                                            <div class="auto cell">
-                                                <h4>abcedea</h4>
-                                            </div>
-                                        </div>
-
-                                        <div class="grid-x" component="stats/player/list/item" data-pid="3">
-                                            <div class="shrink cell">
-                                                <img src="https://crafatar.com/avatars/41910d0e-d3d4-4eca-bf8f-30510281f269?size=50">
-                                            </div>
-                                            <div class="auto cell">
-                                                <h4>abcedea</h4>
-                                            </div>
-                                        </div>
+                                        <input type="text" placeholder="start typing a player name..." component="stats/player/list/search">
                                     </div>
                                     <div class="large-9 medium-8 cell" component="stats/player/info">
                                         <div component="stats/player/info/ctl/close" class="show-for-small-only">&times;</div>
@@ -246,11 +221,75 @@
             $(document).foundation();
 
             let ps = new PlayerStats();
+            var cursor = ''; var count = 0; var loading = false;
 
-            $('[component="stats/player/list/item"]').click(() => {
+            let get_more_players = (cursor, next) => {
+                ps.getPlayerList((err, payload) => {
+                    if (err) return next(false);
+                    else {
+                        if (count === 0) $('[component="stats/player/list/loader"]').remove();
+                        payload.players.forEach(player => {
+                            $('[component="stats/player/list"]').append(`
+                                <div class="grid-x${count === 0 ? ' active' : ''}" component="stats/player/list/item" data-pid="${player.pid}" onclick="click__plist_item(this)">
+                                    <div class="shrink cell">
+                                        <img src="https://crafatar.com/avatars/${player.uuid}?size=50">
+                                    </div>
+                                    <div class="auto cell">
+                                        <h4>${player.name}</h4>
+                                    </div>
+                                </div>
+                            `);
+
+                            count++;
+                        });
+
+                        loading = false;
+
+                        if (payload.cx) {
+                            $('[component="stats/player/list"]').append(`<div class="loader-container-small" component="stats/player/list/loader"><div class="loader small">Loading...</div></div>`);
+                            return next(payload.cx);
+                        } else {
+                            $('[component="stats/player/list/loader"]').remove();
+                            return next('');
+                        }
+                    }
+                }, cursor);
+            };
+
+            let cursored_scroll = () => {
+                // maybe add a loader?
+                if (count === 0) $('[component="stats/player/list"]').append(`<div class="loader" component="stats/player/list/loader">Loading...</div>`);
+                get_more_players(cursor, res => {
+                    if (res !== false) {
+                        if (res) cursor = res;
+                        else {
+                            $('[component="stats/player/list"]').unbind('scroll');
+                            cursor = '';
+                        }
+                    } else {
+                        console.log('error retrieving next page of player data');
+                    }
+                });
+            }; cursored_scroll(); // run once to start
+
+            // Scrolling
+            $('[component="stats/player/list"]').scroll(() => {
+                if ($('[component="stats/player/list"]').scrollTop() + $('[component="stats/player/list"]').innerHeight() >= $('[component="stats/player/list"]')[0].scrollHeight) {
+                    if (!loading) {
+                        loading = true;
+                        cursored_scroll();
+                    }
+                }
+            });
+
+            // Changing active panels
+            let click__plist_item = el => {
                 $('[component="stats/player/info"]').addClass('active-panel');
                 $('[component="stats/player/list"]').removeClass('active-panel');
-            });
+
+                $('[component="stats/player/list/item"].active').removeClass('active');
+                $(el).addClass('active');
+            };
 
             $('[component="stats/player/info/ctl/close"]').click(() => {
                 $('[component="stats/player/info"]').removeClass('active-panel');

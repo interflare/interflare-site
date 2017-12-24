@@ -13,15 +13,15 @@ class Util {
      * 
      * @param {string} subject what the value is targeted to (e.g. 'player')
      * @param {string} object  what the value represents
-     * @param {array} subData data points for the subject (e.g. ['p', 2], ['w', 3] - player id and world id)
+     * @param {array} sub_data data points for the subject (e.g. ['p', 2], ['w', 3] - player id and world id)
      * 
      * @returns {string}
      * 
      * @example Util.buildStorageKey('player', 'blockCount', ['p', 2], ['w', 3]);
      */
-    static buildLStorageKey(subject, object, ...subData) {
+    static buildLStorageKey(subject, object, ...sub_data) {
         var key = ''+subject; // Ensure a string
-        subData.forEach((el) => {
+        sub_data.forEach((el) => {
             key += '['+ el[0] +':'+ el[1] +']';
         }, this);
 
@@ -36,24 +36,76 @@ class Util {
      * @static
      * 
      * @param {string} key for the data in storage
-     * @param {string} timestampPath where in the key is the timestamp
      * @param {Date} ttl time-to-live (how long until it is supposed to expire)
      * 
      * @returns {boolean} true if it has timed out, false if it's still alive
      */
-    static getLStorageTimeout(key, timestampPath, ttl) {
+    static getLStorageTimeout(key, ttl, supplied_data = null) {
         try {
-            const rawData = window.localStorage.getItem(key)
-            if (rawData === null) return true; // doesn't exist in storage, grab new copy
-
-            timestampPath = 'data.' + timestampPath;
-            const data = JSON.parse(rawData);
-            const storedTS = new Date(eval(timestampPath));
-
-            return storedTS < ttl ? true : false;
+            let data = supplied_data || this.selectLStorage(key);
+            if (data === null) return true; // doesn't exist in storage, grab new copy
+            let stored_ts = new Date(data.__IFLR_TS);
+            return stored_ts < ttl ? true : false;
         } catch (err) {
-            console.warn('Util.getLStorageTimeout('+ key +', '+ timestampPath +', '+ ttl +'): failed - '+ err);
             return true; // Default to HAS timed out, so we at least have fresh data
+        }
+    }
+
+    /**
+     * Save an entry into local storage.
+     * 
+     * @static
+     * 
+     * @param {string} key for the data entry in storage
+     * @param {Object} data object to be converted to JSON and saved
+     * 
+     * @returns {boolean} true if saved successfully, false on error
+     */
+    static insertLStorage(key, data) {
+        try {
+            data.__IFLR_TS = new Date(); // set timestamp
+            let json_data = JSON.stringify(data);
+            window.localStorage.setItem(key, json_data);
+            return true;
+        } catch (err) {
+            return false;
+        }
+    }
+
+    /**
+     * Get an entry from local storage.
+     * 
+     * @static
+     * 
+     * @param {string} key where the entry is stored
+     * 
+     * @returns {Object|boolean} object if successful, false if not
+     */
+    static selectLStorage(key) {
+        try {
+            let raw = window.localStorage.getItem(key);
+            return data = JSON.parse(raw);
+        } catch (err) {
+            return false;
+        }
+    }
+
+    static passLCache(key, ttl, data_req) {
+        let data = this.selectLStorage(key);
+        if (data === null) {
+            return data_req(resp => {
+                // ask the caller to fill-in the data for us
+                this.insertLStorage(key, resp);
+                return resp;
+            });
+        } else {
+            if (this.getLStorageTimeout(key, ttl, data)) {
+                // expired data
+                return data_req(resp => {
+                    this.insertLStorage(key, resp);
+                    return resp;
+                });
+            } else return data;
         }
     }
 
@@ -62,14 +114,14 @@ class Util {
      * 
      * @static
      * 
-     * @param {string} paramName ?theParameterName
+     * @param {string} param_name ?theParameterName
      */
-    static get(paramName) {
+    static get(param_name) {
         var result = null, decode = [];
         var items = location.search.substr(1).split('&');
         for (var index = 0; index < items.length; index++) {
             decode = items[index].split('=');
-            if (decode[0] === paramName) result = decodeURIComponent(decode[1]);
+            if (decode[0] === param_name) result = decodeURIComponent(decode[1]);
         }
 
         return result;

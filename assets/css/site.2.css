@@ -109,6 +109,15 @@ nav .logo h1 {
     line-height: 21px;
 }
 
+nav .logo p {
+    display: inline-block;
+    margin: 12px 0 0;
+
+    color: #fff;
+
+    font-size: 10px;
+}
+
 nav .cta {
     margin: 8px 0;
 }

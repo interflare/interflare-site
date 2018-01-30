@@ -1,3 +1,7 @@
+html {
+  background: #333;
+}
+
 body {
   font-family: "source-sans-pro", Calibri, Candara, Arial, sans-serif;
   min-height: 100%;

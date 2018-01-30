@@ -11,6 +11,7 @@ import NotFound from './_pages/_errors/NotFound';
 
 // Main pages
 import Home from './_pages/Home';
+import Livemap from './_pages/Livemap';
 
 // Media
 import IFLRIcon from './_components/_svg/IFLRIcon';
@@ -80,7 +81,8 @@ class App extends Component {
             </nav>
 
             <Switch>
-              <Route path="/" exact component={Home}/>
+              <Route path="/" exact component={Home} />
+              <Route path="/map.html" component={Livemap} />
               <Route component={NotFound}/>
             </Switch>
 

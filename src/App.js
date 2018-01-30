@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {
   BrowserRouter as Router,
   Route,
-  Link,
+  NavLink,
   Switch
 } from 'react-router-dom';
 
@@ -40,17 +40,17 @@ class App extends Component {
           <div className="off-canvas position-right" id="side-menu" data-off-canvas data-close-on-click="false" data-content-overlay="false">
             <mobile-nav>
               <div className="logo">
-                <Link to="/" data-toggle="side-menu" onClick={this.toggleMobMenu.bind(this)}>
+                <NavLink to="/" activeClassName="" data-toggle="side-menu" onClick={this.toggleMobMenu.bind(this)}>
                   <IFLRIcon />
                   <h1>InterFlare</h1>
-                </Link>
+                </NavLink>
               </div>
 
               <ul>
-                <li><a href="https://community.interflare.net/?utm_source=iflr-site">Community</a></li>
-                <li><Link to="/map.html" data-toggle="side-menu" onClick={this.toggleMobMenu.bind(this)}>Live maps</Link></li>
+                <li><NavLink to="https://community.interflare.net/?utm_source=iflr-site">Community</NavLink></li>
+                <li><NavLink to="/map.html" data-toggle="side-menu" onClick={this.toggleMobMenu.bind(this)}>Live maps</NavLink></li>
 
-                <li className="cta"><Link to="/join.html" data-toggle="side-menu" onClick={this.toggleMobMenu.bind(this)}>Join us</Link></li>
+                <li className="cta"><NavLink to="/join.html" activeClassName="" data-toggle="side-menu" onClick={this.toggleMobMenu.bind(this)}>Join us</NavLink></li>
               </ul>
             </mobile-nav>
           </div>
@@ -59,14 +59,14 @@ class App extends Component {
               <div className="container clearfix">
                 <ul className="float-left">
                   <li className="logo">
-                  <Link to="/">
-                    <IFLRIcon />
-                    <h1>InterFlare</h1>
-                  </Link>
+                    <NavLink to="/" activeClassName="">
+                      <IFLRIcon />
+                      <h1>InterFlare</h1><p>&trade;</p>
+                    </NavLink>
                   </li>
                   <div className="items hide-for-small-only">
-                    <li><a href="https://community.interflare.net/?utm_source=iflr-site">Community</a></li>
-                    <li><Link to="map.html">Live maps</Link></li>
+                    <li><NavLink to="https://community.interflare.net/?utm_source=iflr-site">Community</NavLink></li>
+                    <li><NavLink to="/map.html" >Live maps</NavLink></li>
                   </div>
                 </ul>
                 <ul className="float-right">
@@ -77,7 +77,7 @@ class App extends Component {
                       <span className="icon-bar"></span>
                     </a>
                   </li>
-                  <li className="cta hide-for-small-only"><Link to="/join.html">Join us</Link></li>
+                  <li className="cta hide-for-small-only"><NavLink to="/join.html" activeClassName="">Join us</NavLink></li>
                 </ul>
               </div>
             </nav>

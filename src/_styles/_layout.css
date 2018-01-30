@@ -41,6 +41,15 @@ nav {
   margin-bottom: 4px;
 }
 
+nav .logo p { 
+  display: inline-block; 
+  margin: 12px 0 0; 
+
+  color: #fff; 
+
+  font-size: 10px; 
+}
+
 nav ul,
 mobile-nav ul {
   list-style: none;

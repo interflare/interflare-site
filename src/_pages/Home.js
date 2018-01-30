@@ -10,6 +10,11 @@ import PlanetIcon from '../_components/_svg/PlanetIcon';
 import '../_styles/home.css';
 
 class Home extends Component {
+  componentDidMount() {
+    window.$('html, body').animate({ scrollTop: 0 }, 400);
+    window.$(document).foundation();
+  }
+
   render() {
     return (
       <div>

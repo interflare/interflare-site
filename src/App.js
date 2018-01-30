@@ -40,7 +40,7 @@ class App extends Component {
           <div className="off-canvas position-right" id="side-menu" data-off-canvas data-close-on-click="false" data-content-overlay="false">
             <mobile-nav>
               <div className="logo">
-                <Link to="/">
+                <Link to="/" data-toggle="side-menu" onClick={this.toggleMobMenu.bind(this)}>
                   <IFLRIcon />
                   <h1>InterFlare</h1>
                 </Link>
@@ -48,9 +48,9 @@ class App extends Component {
 
               <ul>
                 <li><a href="https://community.interflare.net/?utm_source=iflr-site">Community</a></li>
-                <li><Link to="/map.html">Live maps</Link></li>
+                <li><Link to="/map.html" data-toggle="side-menu" onClick={this.toggleMobMenu.bind(this)}>Live maps</Link></li>
 
-                <li className="cta"><Link to="/join.html">Join us</Link></li>
+                <li className="cta"><Link to="/join.html" data-toggle="side-menu" onClick={this.toggleMobMenu.bind(this)}>Join us</Link></li>
               </ul>
             </mobile-nav>
           </div>

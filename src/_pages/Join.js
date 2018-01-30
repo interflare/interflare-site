@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 
 class Join extends Component {
+  componentDidMount() {
+    window.$('html, body').animate({ scrollTop: 0 }, 400);
+    window.$(document).foundation();
+  }
+
   render() {
     return (
       <page>
-        <section id="join" style={ {padding: `0 0 50px`} }>
+        <section id="join" style={ {padding: `50px 0`} }>
           <div className="container">
             <h2 className="lesser">Join us today</h2>
             <div className="input-group">

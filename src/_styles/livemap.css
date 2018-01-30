@@ -1,0 +1,19 @@
+#livemap {
+  border: none;
+  
+  width: 100vw;
+  height: calc(100vh - 50px - 80px);
+  margin: -7px 0;
+
+  background: #464646;
+}
+
+/* MEDIUM SCREENS */
+@media screen and (max-width: 63.9375em) {
+  /*  */
+}
+
+/* SMALL SCREENS */
+@media screen and (max-width: 39.9375em) {
+  /*  */
+}

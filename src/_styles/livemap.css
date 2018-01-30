@@ -8,10 +8,6 @@
   background: #464646;
 }
 
-footer .container {
-  width: 100% !important;
-}
-
 /* MEDIUM SCREENS */
 @media screen and (max-width: 63.9375em) {
   /*  */

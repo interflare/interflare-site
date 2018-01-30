@@ -11,6 +11,7 @@ import NotFound from './_pages/_errors/NotFound';
 
 // Main pages
 import Home from './_pages/Home';
+import Join from './_pages/Join';
 import Livemap from './_pages/Livemap';
 
 // Media
@@ -83,6 +84,7 @@ class App extends Component {
             <Switch>
               <Route path="/" exact component={Home} />
               <Route path="/map.html" component={Livemap} />
+              <Route path="/join.html" component={Join} />
               <Route component={NotFound}/>
             </Switch>
 

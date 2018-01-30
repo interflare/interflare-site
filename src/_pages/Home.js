@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+import GlobalBlockTotals from '../_components/GlobalBlockTotals';
+
 import LightningIcon from '../_components/_svg/LightningIcon';
 import NetworkIcon from '../_components/_svg/NetworkIcon';
 import PadlockIcon from '../_components/_svg/PadlockIcon';
@@ -40,22 +42,7 @@ class Home extends Component {
 
         <section className="dark" id="counts">
           <div className="container">
-            <div component="block/home/container">
-              <div className="grid-x grid-margin-x align-center">
-                <div className="large-4 cell hide-for-small-only hide-for-medium-only">
-                  <p className="bignum" component="block/home/total">0</p>
-                  <p className="numexp">Total blocks</p>
-                </div>
-                <div className="large-4 medium-6 cell">
-                  <p className="bignum" component="block/home/placed">0</p>
-                  <p className="numexp">Total blocks placed</p>
-                </div>
-                <div className="large-4 medium-6 cell hide-for-small-only">
-                  <p className="bignum" component="block/home/broken">0</p>
-                  <p className="numexp">Total blocks broken</p>
-                </div>
-              </div>
-            </div>
+            <GlobalBlockTotals />
           </div>
         </section>
 

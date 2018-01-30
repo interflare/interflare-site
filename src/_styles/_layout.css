@@ -361,8 +361,17 @@ a.icon-container {
   font-size: 4px;
 }
 
+.loader.white {
+  color: #fff;
+} .loader.white,
+.loader.white:before,
+.loader.white:after {
+  background: #fff;
+}
+
 .loader-container-small {
-  height: 40px;
+  height: 25px;
+  margin: 25px 0;
   width: 100%;
 }
 

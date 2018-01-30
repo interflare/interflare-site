@@ -17,6 +17,7 @@ import Livemap from './_pages/Livemap';
 // Media
 import IFLRIcon from './_components/_svg/IFLRIcon';
 import ENDXIcon from './_components/_svg/ENDXIcon';
+import DOLogo from './_components/_svg/DOLogo';
 import './_styles/_layout.css';
 
 class App extends Component {
@@ -90,6 +91,7 @@ class App extends Component {
 
             <footer>
               <div className="container">
+                <a href="https://m.do.co/c/f8ffd8a5f356" className="do hide-for-small-only"><DOLogo /></a>
                 <a href="https://endogix.com/?utm_source=iflr-site"><ENDXIcon /></a>
                 <div className="brand">
                   <p>&copy; <a href="https://endogix.com/?utm_source=iflr-site">Endogix</a>&trade; 2018</p>

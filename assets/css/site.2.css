@@ -403,17 +403,17 @@ a.icon-container {
     background: none;
 }
 
-.bignum, .numexp {
+.attntext, .attntextsupp {
     text-align: center;
     margin: 0;
 }
 
-.bignum {
+.attntext {
     font-size: 50px;
     font-weight: 700;
 }
 
-.numexp {
+.attntextsupp {
     margin-bottom: 18px;
 }
 
@@ -462,6 +462,11 @@ h4.under {
 
     section#reasons svg { height: 80px; }
     section#reasons h4 { text-align: center; }
+
+    section#join input {
+        font-size: 1.5rem;
+        height: 3rem;
+    }
 
     footer {
         text-align: center;

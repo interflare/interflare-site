@@ -1,2 +1,2 @@
-# interflare.net
+# interflare-site
 Homepage for InterFlare

@@ -427,6 +427,38 @@ h4.under {
     border-bottom: #e4e4e4 solid 1px;
 }
 
+.status {
+    font-size: 18px;
+    margin-left: 15px;
+    padding-bottom: 6px;
+
+    vertical-align: middle;
+}
+
+.status::before {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px 1px 0;
+
+    background-color: #02c2e1;
+
+    content: " ";
+    display: inline-block;
+
+    vertical-align: middle;
+    border-radius: 50%;
+}
+
+.status.online::before {
+    background-color: #02e102;
+}
+.status.offline::before {
+    background-color: #e10202;
+}
+.status.issues::before {
+    background-color: #e102d3;
+}
+
 #livemap {
     border: none;
     
@@ -443,6 +475,11 @@ h4.under {
     h4 { font-size: 24px; }
 
     nav .logo h1 { margin-left: 15px; }
+
+    .status {
+        display: block;
+        margin-left: 0;
+    }
 
     jumbo {
         min-height: 250px;

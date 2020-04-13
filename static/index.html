@@ -100,8 +100,8 @@
                                 <p class="attntextsupp">Game mode</p>
                             </div>
                             <div class="large-4 medium-6 cell">
-                                <p class="attntext">16</p>
-                                <p class="attntextsupp">Player slots</p>
+                                <p class="attntext" component="quickinfo/players/count">16</p>
+                                <p class="attntextsupp" component="quickinfo/players/tag">Player slots</p>
                             </div>
                         </div>
                     </div>
@@ -109,7 +109,7 @@
 
                 <section class="dark" id="join">
                     <div class="container">
-                        <h2 class="lesser">Join us today</h2>
+                        <h2 class="lesser">Join us today <span class="status" component="quickinfo/server/status">pending</span></h2>
                         <div class="input-group">
                             <span class="input-group-label">RR v5</span>
                             <input class="input-group-field" type="text" value="rrise.interflare.net" onfocus="this.select();">
@@ -137,8 +137,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/what-input/5.0.1/what-input.min.js" integrity="sha256-H/pzN880hDBJqAzZip+BOpvX0ofDzjiB1HXUf/0tbcE=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js" integrity="sha256-mRYlCu5EG+ouD07WxLF8v4ZAZYCA6WrmdIXyn1Bv9Vk=" crossorigin="anonymous"></script>
-        <script>
-            $(document).foundation();
-        </script>
+        <script src="assets/js/site.js"></script>
     </body>
 </html>

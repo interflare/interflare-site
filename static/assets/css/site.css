@@ -441,6 +441,7 @@ h4.under {
     margin: 0 5px 1px 0;
 
     background-color: #02c2e1;
+    transition: background 0.5s cubic-bezier(.65,.05,.36,1);
 
     content: " ";
     display: inline-block;

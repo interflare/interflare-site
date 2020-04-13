@@ -7,7 +7,7 @@ ExecStart=/usr/bin/dotnet /var/www/api/InterFlare.Api.dll
 Restart=always
 RestartSec=2
 KillSignal=SIGINT
-SyslogIdentifier=dotnet-example
+SyslogIdentifier=iflr-api
 User=www-data
 Environment=ASPNETCORE_ENVIRONMENT=Production
 Environment=DOTNET_PRINT_TELEMETRY_MESSAGE=false

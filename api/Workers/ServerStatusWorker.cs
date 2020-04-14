@@ -103,7 +103,6 @@ namespace InterFlare.Api.Workers
                     _logger.LogInformation(ex, "❌ Server was marked offline, general exception");
                 }
 
-
                 sw.Stop();
                 _logger.LogDebug("Finished executing task in {0}", sw.Elapsed);
                 await Task.Delay(CYCLE_PERIOD, token);
